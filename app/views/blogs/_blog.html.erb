@@ -1,0 +1,27 @@
+      <div class="content_post" style="background-image: url(<%= blog.image_url %>);">
+        <span class="place">
+            <span></span><%= blog.place %>
+        </span>
+          <div class="more">
+            <span><%= image_tag 'arrow_top.png' %></span>
+            <ul class="more_list">
+              <li>
+                <%= link_to 'Detail', "/blogs/#{blog.id}", method: :get %>
+              </li>
+               <% if user_signed_in? && current_user.id == blog.user_id %>
+                  <li>
+                    <%= link_to 'Edit', "/blogs/#{blog.id}/edit", method: :get %>
+                  </li>
+                  <li>
+                    <%= link_to 'Delete', "/blogs/#{blog.id}", method: :delete %>
+                 </li>
+              <% end %>
+            </ul>
+          </div>
+          <%= simple_format(blog.content) %>
+        <span class="name">
+          <a href="">
+            <span>Username</span><%= blog.user.nickname %>
+          </a>
+        </span>
+      </div>

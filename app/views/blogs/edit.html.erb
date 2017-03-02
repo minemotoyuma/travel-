@@ -1,0 +1,14 @@
+<div class="contents row">
+    <%= form_tag("/blogs/#{@blog.id}", method: :patch) do %>
+      <h3>
+        Edit
+      </h3>
+      <input placeholder="place" type="text" name="place" value="<%= @blog.place %>" autofocus="true"></input>
+      <input placeholder="title" type="text" name="title" value="<%= @blog.title %>" autofocus="true"></input>
+      <input placeholder="Image Url" type="text" name="image_url" value="<%= @blog.image_url %>" autofocus="true"></input>
+      <textarea cols="30" name="content" placeholder="content" rows="10"><%= @blog.content %></textarea>
+
+      <input type="submit" value="SENT">
+      
+    <% end %>
+  </div>
