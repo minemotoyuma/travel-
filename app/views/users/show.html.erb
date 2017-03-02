@@ -1,5 +1,5 @@
    <div class="contents row" >
-    <p><%= @nickname %>'s post</p>
+    <p><%= @nickname %>'s posts</p>
     <% @blogs.each do |blog| %>
       <%= render partial: "blogs/blog", locals: { blog: blog } %>
     <% end %>
